@@ -22,8 +22,5 @@ module.exports = {
         return ((R * c *1000).toFixed());
     },
 
-    converterMetroKM: (metros) => {
-        // return `${(metros/1000).toFixed(1)}km`
-        return metros
-    }
+    converterMetroKM: (metros) => (metros / 1000).toFixed(1)
 }
