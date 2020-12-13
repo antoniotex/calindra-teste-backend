@@ -6,14 +6,16 @@ module.exports = {
     index: async (req, res) => {
         const { enderecos } = req.body
 
-        if(enderecos.length)
-            return res.status(400).send({ erro: 'Erro ao calcular distâncias', msg: 'É necessário 2 ou mais endereços para o cálculo de distância' }) 
+        console.log(req.body)
+
+        if(!enderecos || enderecos.length < 2)
+            return res.status(400).send({ erro: 'Erro ao calcular distâncias', msg: 'É necessário 2 ou mais endereços para o cálculo de distâncias' }) 
 
         let calculos = { distancias: [] }
 
         try {
-            for await (const endereco of enderecos){
-                const response = await apiGoogle.get(`/json?key=${process.env.API_KEY_GOOGLE}&address=${utils.formatarEndereco(endereco.endereco)}`)
+            for await (const item of enderecos){
+                const response = await apiGoogle.get(`/json?key=${process.env.API_KEY_GOOGLE}&address=${utils.formatarEndereco(item.endereco)}`)
 
                 if(response.data.status === 'REQUEST_DENIED')
                     return res.status(400).send({ erro: 'Erro ao calcular distâncias', msg: response.data.error_message }) 
@@ -21,7 +23,7 @@ module.exports = {
                 if(response.data.status === 'ZERO_RESULTS')
                     return res.status(400).send({ erro: 'Erro ao calcular distâncias', msg: 'Nenhum endereço foi encontrado' }) 
 
-                endereco.geo = response.data.results[0].geometry.location
+                item.geo = response.data.results[0].geometry.location
             }
 
             for (let i = 0; i < enderecos.length; i++) {
@@ -46,7 +48,7 @@ module.exports = {
             calculos.minDIstancia = distanciasOrdenadas[0]
             calculos.maxDIstancia = distanciasOrdenadas[distanciasOrdenadas.length - 1]
         
-            res.send(calculos)
+            res.status(200).send(calculos)
 
         } catch (error) {
             res.status(400).send({ erro: 'Erro ao calcular distâncias', msg: error.message })
