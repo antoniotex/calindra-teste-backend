@@ -6,8 +6,6 @@ module.exports = {
     index: async (req, res) => {
         const { enderecos } = req.body
 
-        console.log(req.body)
-
         if(!enderecos || enderecos.length < 2)
             return res.status(400).send({ erro: 'Erro ao calcular distâncias', msg: 'É necessário 2 ou mais endereços para o cálculo de distâncias' }) 
 
