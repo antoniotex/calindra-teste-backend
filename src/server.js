@@ -2,7 +2,7 @@ const express = require('express')
 
 const app = express()
 
-const routes = require('./routes/calculo-routes')
+const routes = require('./routes/distanciaRoutes')
 
 app.use(express.json())
 
