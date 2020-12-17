@@ -136,6 +136,6 @@ http://localhost:5000/api-docs
 
 ### Na internet
 ```
-https://desafio-calindra-backend.herokuapp.com/calcula_distancia
+https://desafio-calindra-backend.herokuapp.com/api-docs/
 ``` 
 
