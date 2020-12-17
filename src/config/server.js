@@ -1,11 +1,11 @@
 const express = require('express')
 const swaggerJsDoc = require('swagger-jsdoc')
 const swaggerUi = require('swagger-ui-express')
-const distanciaController = require('./controller/distanciaController')
+const distanciaController = require('../controller/distanciaController')
 
 const app = express()
 
-const routes = require('./routes/distanciaRoutes')
+const routes = require('../routes/distanciaRoutes')
 
 
 const swaggerOptions = {
@@ -31,8 +31,4 @@ app.use(express.json())
 
 app.use(routes)
 
-const PORT = process.env.PORT || 5000
-
-app.listen(PORT, () => {
-    console.log(`Servidor rodando na porta ${PORT}`)
-})
+module.exports = app
