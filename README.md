@@ -41,6 +41,12 @@ npm run dev
 Acesse o endereço abaixo no seu navegador para visualizar
 ```
 http://localhost:5000/api-docs
+
+
 ```
 
+### Na internet
+```
+https://desafio-calindra-backend.herokuapp.com/api-docs/#/default/post_calcula_distancia
+``` 
 
