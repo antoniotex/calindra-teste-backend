@@ -123,7 +123,10 @@ cd calindra-teste-backend
 npm install
 ```
 
-Quando terminar de instalar as depêndencias, inicie o servidor de desenvolvimento
+Quando terminar de instalar as depêndencias, crie um arquivo chamado .env na raíz do projeto e adicione uma APIKEY válida do Google.
+Para facilitar, no arquivo example.env tem um exemplo de como ficará.
+
+Após adicionar a APIKEY, rode o segunte comando no terminal
 ```
 npm run dev
 ```
