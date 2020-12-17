@@ -8,8 +8,97 @@ Segue abaixo o formato de requisição suportado pela API:
 ![image](https://user-images.githubusercontent.com/26071112/102423083-f297e180-3fe6-11eb-9e95-6b7101bd872d.png)
 
 ## Retorno esperado
-Segue abaixo print do retorno esperado:
-![image](https://user-images.githubusercontent.com/26071112/102423309-85d11700-3fe7-11eb-8f9d-a6e299093490.png)
+```
+{
+    "distancias": [
+        {
+            "endereco1": {
+                "endereco": "Beco da lapa, belford roxo, 26125563, rio de janeiro",
+                "coordenadas": {
+                    "lat": -22.7310725,
+                    "lng": -43.4098189
+                }
+            },
+            "endereco2": {
+                "endereco": "Rua Tertuliano Pimenta, 491, Nova Iguaçu Rio de Janeiro",
+                "coordenadas": {
+                    "lat": -22.7565842,
+                    "lng": -43.4700378
+                }
+            },
+            "distancia": "6.8"
+        },
+        {
+            "endereco1": {
+                "endereco": "Avenida Paulo Guilguer Reimberg, 415, Parque Maria Fernandes, São Paulo",
+                "coordenadas": {
+                    "lat": -23.7706555,
+                    "lng": -46.7136874
+                }
+            },
+            "endereco2": {
+                "endereco": "Rua Tertuliano Pimenta, 491, Nova Iguaçu Rio de Janeiro",
+                "coordenadas": {
+                    "lat": -22.7565842,
+                    "lng": -43.4700378
+                }
+            },
+            "distancia": "348.8"
+        },
+        {
+            "endereco1": {
+                "endereco": "Avenida Paulo Guilguer Reimberg, 415, Parque Maria Fernandes, São Paulo",
+                "coordenadas": {
+                    "lat": -23.7706555,
+                    "lng": -46.7136874
+                }
+            },
+            "endereco2": {
+                "endereco": "Beco da lapa, belford roxo, 26125563, rio de janeiro",
+                "coordenadas": {
+                    "lat": -22.7310725,
+                    "lng": -43.4098189
+                }
+            },
+            "distancia": "355.5"
+        }
+    ],
+    "minDIstancia": {
+        "endereco1": {
+            "endereco": "Beco da lapa, belford roxo, 26125563, rio de janeiro",
+            "coordenadas": {
+                "lat": -22.7310725,
+                "lng": -43.4098189
+            }
+        },
+        "endereco2": {
+            "endereco": "Rua Tertuliano Pimenta, 491, Nova Iguaçu Rio de Janeiro",
+            "coordenadas": {
+                "lat": -22.7565842,
+                "lng": -43.4700378
+            }
+        },
+        "distancia": "6.8"
+    },
+    "maxDIstancia": {
+        "endereco1": {
+            "endereco": "Avenida Paulo Guilguer Reimberg, 415, Parque Maria Fernandes, São Paulo",
+            "coordenadas": {
+                "lat": -23.7706555,
+                "lng": -46.7136874
+            }
+        },
+        "endereco2": {
+            "endereco": "Beco da lapa, belford roxo, 26125563, rio de janeiro",
+            "coordenadas": {
+                "lat": -22.7310725,
+                "lng": -43.4098189
+            }
+        },
+        "distancia": "355.5"
+    }
+}
+``` 
 
 ## Tecnologias
 + Javascript
